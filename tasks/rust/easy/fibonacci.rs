@@ -1,5 +1,21 @@
 // Rust - Easy
 
-use std::io;
+fn fibonacci(n: u32) -> u32 {
+    if n <= 0 { return 0 }
+    if n == 1 { return 1 }
+    let mut a = 0;
+    let mut b = 1;
+    for _ in 2..=n {
+        let temp = a + b;
+        a = b;
+        b = temp;
+    }
+    b
+}
 
-// TODO: Implement fibonacci sequence in Rust
+fn main() {
+    let test_cases: [u32; 11] = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+    for test in test_cases.iter() {
+        println!("fibonacci({}) = {}", test, fibonacci(*test));
+    }
+}
