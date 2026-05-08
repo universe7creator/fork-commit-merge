@@ -3,5 +3,11 @@
 import std.stdio;
 
 void main() {
-    // TODO: Implement program to reverse a string
+    string input = "Hello";
+    string reversed;
+    foreach (char c; input) {
+        reversed = c ~ reversed;
+    }
+    writeln("Original: ", input);
+    writeln("Reversed: ", reversed);
 }
